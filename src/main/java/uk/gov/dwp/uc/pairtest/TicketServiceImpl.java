@@ -59,27 +59,4 @@ public class TicketServiceImpl implements TicketService {
             throw new InvalidPurchaseException();
         }
     }
-
-    private boolean isChildOrInfantOnly(TicketTypeRequest...ticketTypeRequests){
-        boolean hasAdultRequest = true;
-        for(TicketTypeRequest ticketTypeRequest: ticketTypeRequests){
-            if (ticketTypeRequest.getTicketType() == TicketTypeRequest.Type.ADULT){
-                 hasAdultRequest = false;
-                 break;
-            }
-        }
-
-        return hasAdultRequest;
-    }
-
-    private int getTicketPrice(TicketTypeRequest.Type type, int noOfTickets){
-        int unitPrice = 0;
-        if (type == TicketTypeRequest.Type.ADULT)
-            unitPrice = 20;
-        else if (type == TicketTypeRequest.Type.CHILD)
-            unitPrice = 10;
-
-        return unitPrice * noOfTickets;
-    }
-
 }
