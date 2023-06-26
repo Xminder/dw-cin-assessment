@@ -2,9 +2,9 @@ package uk.gov.dwp.uc.pairtest.businessrules;
 
 import uk.gov.dwp.uc.pairtest.domain.BusinessRule;
 
-public class AdultAlongChildAndInfactRule implements BusinessRule {
+public class AdultAlongChildAndInfantRule implements BusinessRule {
     private int numberOfAdultTicketBeingPurchase = 0;
-    public AdultAlongChildAndInfactRule(int numberOfAdultTicketBeingPurchase){
+    public AdultAlongChildAndInfantRule(int numberOfAdultTicketBeingPurchase){
         this.numberOfAdultTicketBeingPurchase = numberOfAdultTicketBeingPurchase;
     }
 
