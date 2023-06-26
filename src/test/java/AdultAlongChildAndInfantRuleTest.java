@@ -11,7 +11,7 @@ import static org.junit.Assert.assertFalse;
 
 public class AdultAlongChildAndInfantRuleTest {
     @Test
-    public void AdultAlongChildAndInfantRule_Not_Broken(){
+    public void adultAlongChildAndInfantRule_Not_Broken(){
         long adultTicketRequestCount = Arrays.stream(TicketCollection.familyTickets())
                 .filter(t -> t.getTicketType() == TicketTypeRequest.Type.ADULT)
                 .count();
@@ -22,7 +22,7 @@ public class AdultAlongChildAndInfantRuleTest {
     }
 
     @Test
-    public void AdultAlongChildAndInfantRule_Broken(){
+    public void adultAlongChildAndInfantRule_Broken(){
         long adultTicketRequestCount = Arrays.stream(TicketCollection.childAndInfantTickets())
                 .filter(t -> t.getTicketType() == TicketTypeRequest.Type.ADULT)
                 .count();

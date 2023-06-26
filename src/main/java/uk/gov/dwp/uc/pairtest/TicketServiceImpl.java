@@ -3,7 +3,7 @@ package uk.gov.dwp.uc.pairtest;
 import thirdparty.paymentgateway.TicketPaymentService;
 import thirdparty.seatbooking.SeatReservationService;
 import uk.gov.dwp.uc.pairtest.businessrules.AdultAlongChildAndInfantRule;
-import uk.gov.dwp.uc.pairtest.businessrules.MaxiumTicketPerPurchaseRule;
+import uk.gov.dwp.uc.pairtest.businessrules.MaximumTicketPerPurchaseRule;
 import uk.gov.dwp.uc.pairtest.businessrules.ValidAccountHolderRule;
 import uk.gov.dwp.uc.pairtest.domain.BusinessRule;
 import uk.gov.dwp.uc.pairtest.domain.PriceCalculatorFactory;
@@ -48,7 +48,7 @@ public class TicketServiceImpl implements TicketService {
         }
 
         checkRule(new AdultAlongChildAndInfantRule(numberOfAdultTicketsBeingPurchased));
-        checkRule(new MaxiumTicketPerPurchaseRule(ticketCount));
+        checkRule(new MaximumTicketPerPurchaseRule(ticketCount));
 
         ticketPaymentService.makePayment(accountId, ticketAmount);
         seatReservationService.reserveSeat(accountId, ticketCount);

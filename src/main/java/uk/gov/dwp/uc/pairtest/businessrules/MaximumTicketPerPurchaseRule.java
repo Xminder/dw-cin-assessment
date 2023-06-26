@@ -2,12 +2,12 @@ package uk.gov.dwp.uc.pairtest.businessrules;
 
 import uk.gov.dwp.uc.pairtest.domain.BusinessRule;
 
-public class MaxiumTicketPerPurchaseRule implements BusinessRule {
+public class MaximumTicketPerPurchaseRule implements BusinessRule {
 
     private final int maxiumTicketPerPurchase = 20;
     private  int numberOfTicketBeingPurchase;
 
-    public MaxiumTicketPerPurchaseRule(int numberOfTicketBeingPurchase){
+    public MaximumTicketPerPurchaseRule(int numberOfTicketBeingPurchase){
         this.numberOfTicketBeingPurchase = numberOfTicketBeingPurchase;
     }
     @Override
