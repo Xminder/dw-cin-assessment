@@ -36,15 +36,15 @@ public class TicketServiceImpl implements TicketService {
         int ticketCount = 0;
         int numberOfAdultTicketsBeingPurchased = 0;
         for(TicketTypeRequest ticketTypeRequest: ticketTypeRequests){
-            if (ticketTypeRequest.getTicketType().equals(TicketTypeRequest.Type.INFANT))
-                continue;
+            /*if (ticketTypeRequest.getTicketType().equals(TicketTypeRequest.Type.INFANT))
+                continue;*/
             if (ticketTypeRequest.getTicketType().equals(TicketTypeRequest.Type.ADULT))
                 numberOfAdultTicketsBeingPurchased++;
 
             TicketPriceCalculator ticketPriceCalculator =
                     PriceCalculatorFactory.getPriceCaluclator(ticketTypeRequest.getTicketType());
             ticketAmount += ticketPriceCalculator.calculatePrice(ticketTypeRequest.getNoOfTickets());
-            ticketCount += ticketTypeRequest.getNoOfTickets();
+            ticketCount += ticketPriceCalculator.getAllocatedTickets(ticketTypeRequest.getNoOfTickets());
         }
 
         checkRule(new AdultAlongChildAndInfantRule(numberOfAdultTicketsBeingPurchased));

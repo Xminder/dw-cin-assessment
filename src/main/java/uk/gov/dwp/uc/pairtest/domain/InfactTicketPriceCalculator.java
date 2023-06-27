@@ -6,4 +6,6 @@ public class InfactTicketPriceCalculator implements TicketPriceCalculator {
     public int calculatePrice(int numberOfTickets) {
         return unitPrice * numberOfTickets;
     }
+
+    public int getAllocatedTickets(int requestedTicketCount) { return 0 * requestedTicketCount; }
 }

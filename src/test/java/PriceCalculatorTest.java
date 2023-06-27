@@ -12,6 +12,7 @@ public class PriceCalculatorTest {
         var priceCalculator = new AdultTicketPriceCalculator();
 
         assertEquals(40, priceCalculator.calculatePrice(ticketRequest.getNoOfTickets()));
+        assertEquals(2, priceCalculator.getAllocatedTickets(ticketRequest.getNoOfTickets()));
     }
 
     @Test
@@ -20,6 +21,7 @@ public class PriceCalculatorTest {
         var priceCalculator = new ChildTicketCalculator();
 
         assertEquals(40, priceCalculator.calculatePrice(ticketRequest.getNoOfTickets()));
+        assertEquals(4, priceCalculator.getAllocatedTickets(ticketRequest.getNoOfTickets()));
     }
 
     @Test
@@ -28,5 +30,6 @@ public class PriceCalculatorTest {
         var priceCalculator = new InfactTicketPriceCalculator();
 
         assertEquals(0, priceCalculator.calculatePrice(ticketRequest.getNoOfTickets()));
+        assertEquals(0, priceCalculator.getAllocatedTickets(ticketRequest.getNoOfTickets()));
     }
 }

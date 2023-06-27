@@ -17,6 +17,7 @@ public class PriceCalculatorFactoryTest {
 
         assertThat(priceCalculator, instanceOf(AdultTicketPriceCalculator.class));
         assertEquals(40, priceCalculator.calculatePrice(ticketRequest.getNoOfTickets()));
+        assertEquals(2, priceCalculator.getAllocatedTickets(ticketRequest.getNoOfTickets()));
     }
 
     @Test
@@ -27,6 +28,7 @@ public class PriceCalculatorFactoryTest {
 
         assertThat(priceCalculator, instanceOf(ChildTicketCalculator.class));
         assertEquals(40, priceCalculator.calculatePrice(ticketRequest.getNoOfTickets()));
+        assertEquals(4, priceCalculator.getAllocatedTickets(ticketRequest.getNoOfTickets()));
     }
 
     @Test
@@ -37,5 +39,6 @@ public class PriceCalculatorFactoryTest {
 
         assertThat(priceCalculator, instanceOf(InfactTicketPriceCalculator.class));
         assertEquals(0, priceCalculator.calculatePrice(ticketRequest.getNoOfTickets()));
+        assertEquals(0, priceCalculator.getAllocatedTickets(ticketRequest.getNoOfTickets()));
     }
 }
