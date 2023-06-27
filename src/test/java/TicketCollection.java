@@ -25,4 +25,16 @@ public class TicketCollection {
         TicketTypeRequest[] ticketRequests = { adultTicketRequest, childTicketRequest };
         return ticketRequests;
     }
+
+    public static TicketTypeRequest twoAdultsTicket(){
+        return new TicketTypeRequest(TicketTypeRequest.Type.ADULT, 2);
+    }
+
+    public static TicketTypeRequest forChildrenTicket(){
+        return new TicketTypeRequest(TicketTypeRequest.Type.CHILD, 4);
+    }
+
+    public static TicketTypeRequest threeInfantTicket(){
+        return new TicketTypeRequest(TicketTypeRequest.Type.INFANT, 3);
+    }
 }
